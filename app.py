@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -13,6 +13,7 @@ class City(db.Model):
 	name = db.Column(db.String(50), nullable=False)
 
 @app.route('/', methods=['GET','POST'])
+
 
 def index():
 	if request.method == 'POST':
@@ -41,6 +42,10 @@ def index():
 	#print(weather_data)
 
 	return render_template('weather.html', weather_data=weather_data)
+
+@app.errorhandler(500)
+def internal_error(error):
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
 	app.run(debug=True)
