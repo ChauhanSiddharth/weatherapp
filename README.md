@@ -1,5 +1,7 @@
 # weatherapp
-Flask Weather App. Live Demo: <a href="https://weather-app-siddharth.herokuapp.com/">Click here</a>
+Flask Weather App. 
+
+Live Demo: <a href="https://weather-app-siddharth.herokuapp.com/">Click here</a>
 
 ### Download or Clone repository
 
